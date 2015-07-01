@@ -4,12 +4,41 @@ __testMark = true;
 
 MyData = {
 
-	kPreloadImgArray:["../images/testpic/famous_logo.png","../images/testpic/icon_play.png"],
-	kColorArray:[],
-	kWordArray:[],
+	kPreloadImgArray:["famous_logo.png","icon_play.png"],
+	kPreloadAudioArray:[],
+
+	kColorValueArray:[],
+	kWordCnArray:[
+	"红",
+	"橙",
+	"黄",
+	"绿",
+	"蓝",
+	"紫",
+	"黑",
+	"白",
+	"棕",
+	"粉"],
+
+	kWordEnArray:[
+	"RED",
+	"ORANGE",
+	"YELLOW",
+	"GREEN",
+	"BLUE",
+	"PURPLE",
+	"BLACK",
+	"WHITE",
+	"BROWN",
+	"PINK"],
 
 	kTxtWXShare:"分享到微信默认文本",
 	kTxtFBShare:"default text for sharing to facebook",
+
+	_screenWidth:null,
+	_screenHeight:null,
+
+	_imgPath:null,
 
 	_currentWordIndex:null,
 	_currentColorIndex:null,
@@ -17,21 +46,45 @@ MyData = {
 	_correct:null,
 	_answer:null,
 
-	_lever:0,
+	_lever:null,
 	_currentTicking:2000,// mil seconds
 };
 
+// my tools function
+MyFun = {
+	log:function  (logContents) {
+		if (__testMark) {
+			console.log(logContents);
+		};
+	}
+}
+
+
 function init () {
 
-	if (__testMark) {
-		console.log("starting init");
-	};
+	MyFun.log("starting init");
 
-	// implement image preloader
+	// get screen size for later using
+	MyData._screenWidth = window.innerWidth
+        				|| document.documentElement.clientWidth
+        				|| document.body.clientWidth;
+
+   	 MyData._screenHeight = window.innerHeight
+        				|| document.documentElement.clientHeight
+        				|| document.body.clientHeight;
+
+        	MyFun.log("screen width : " + MyData._screenWidth);
+        	MyFun.log("screen height : " + MyData._screenHeight);
+
+        	// according screen width set the images path 
+
+        	init_img_path(MyData._screenWidth);
+
+	// implement image preloader by preloadjs
 	var imgPreload = new createjs.LoadQueue();
 	imgPreload.addEventListener("fileload",handleImgPreloadComplete);
 	for (var i = 0; i < MyData.kPreloadImgArray.length; i++) {
-		imgPreload.loadFile(MyData.kPreloadImgArray[i]);
+		imgPreload.loadFile(MyData._imgPath + MyData.kPreloadImgArray[i]);
 
 	};
 
@@ -41,5 +94,12 @@ function init () {
 
 	}
 
+	// audio preloader
+	
+
 }
 
+function init_img_path (width) {
+	//  just for test temporary ==================================== TODO
+	MyData._imgPath = "../images/testpic/";
+}
