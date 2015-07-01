@@ -1,8 +1,10 @@
+'use strict';
+
 console.log("in app.js");
 
 __testMark = true;
 
-MyData = {
+var MyData = {
 
 	kPreloadImgArray:["famous_logo.png","icon_play.png"],
 	kPreloadAudioArray:[],
@@ -51,11 +53,19 @@ MyData = {
 };
 
 // my tools function
-MyFun = {
+ var MyFun = {
 	log:function  (logContents) {
 		if (__testMark) {
 			console.log(logContents);
 		};
+	},
+	getScreenSize:function  () {
+		MyData._screenWidth = window.innerWidth
+	        				|| document.documentElement.clientWidth
+	        				|| document.body.clientWidth;
+        	   	 MyData._screenHeight = window.innerHeight
+    					|| document.documentElement.clientHeight
+    					|| document.body.clientHeight;
 	}
 }
 
@@ -65,13 +75,7 @@ function init () {
 	MyFun.log("starting init");
 
 	// get screen size for later using
-	MyData._screenWidth = window.innerWidth
-        				|| document.documentElement.clientWidth
-        				|| document.body.clientWidth;
-
-   	 MyData._screenHeight = window.innerHeight
-        				|| document.documentElement.clientHeight
-        				|| document.body.clientHeight;
+	MyFun.getScreenSize();
 
         	MyFun.log("screen width : " + MyData._screenWidth);
         	MyFun.log("screen height : " + MyData._screenHeight);
