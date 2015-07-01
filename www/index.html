@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>colord alpha</title>
+	<script src="js/preloadjs/preloadjs-0.6.1.combined.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/soundjs/soundjs-0.6.1.combined.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<!-- <img src="images/testpic/famous_logo.png" height="200" width="200" alt="LOADING..."> -->
+	<img id="preloadHtml" alt="">
+	<script>
+	var _init_delay = 2000; // mil
+	console.log("in index.html");
+	init(); // define in app.js
+	setTimeout(init_check, _init_delay);
+
+	function init_check () {
+		console.log("did finishing init?");
+
+	};
+	</script>
+</body>
+</html>
