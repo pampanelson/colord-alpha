@@ -1,0 +1,47 @@
+{
+
+  	 "kPreloadImgArray":["famous_logo.png","icon_play.png"],
+	"kPreloadAudioArray":[],
+
+	"kColorValueArray":[],
+	"kWordCnArray":[
+	"红",
+	"橙",
+	"黄",
+	"绿",
+	"蓝",
+	"紫",
+	"黑",
+	"白",
+	"棕",
+	"粉"],
+
+	"kWordEnArray":[
+	"RED",
+	"ORANGE",
+	"YELLOW",
+	"GREEN",
+	"BLUE",
+	"PURPLE",
+	"BLACK",
+	"WHITE",
+	"BROWN",
+	"PINK"],
+
+	"kTxtWXShare":"分享到微信默认文本",
+	"kTxtFBShare":"default text for sharing to facebook",
+
+	"_screenWidth":null,
+	"_screenHeight":null,
+
+	"_imgPath":null,
+
+	"_currentWordIndex":null,
+	"_currentColorIndex":null,
+
+	"_correct":null,
+	"_answer":null,
+
+	"_lever":null,
+	"_currentTicking":2000,// mil seconds
+};
