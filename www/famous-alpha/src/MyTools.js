@@ -1,7 +1,7 @@
 'use strict';
 
 function MyTools () {
-	console.log("MyTools.js");
+	// console.log("MyTools.js");
 	this.__testMark = true;
 };
 
