@@ -23,8 +23,9 @@ myTools.log(MyData._screenWidth);
 var scene = FamousEngine.createScene('body');
 var rootNode = scene.addChild();
 
-// var readyPage = new ReadyPage(rootNode);
 var gamePage = new GamePage(rootNode);
+
+var readyPage = new ReadyPage(rootNode);
 // var resultPage = new ResultPage(rootNode);
 
 // var startN = readyPage.addChild();
